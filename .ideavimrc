@@ -1,3 +1,5 @@
+" Some IJ defaults 
+" ==========
 set scrolloff=5
 
 " Do incremental searching.
@@ -5,15 +7,22 @@ set incsearch
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
+" ===========
 
-" My bindings --->
+" Remap leader key --->
 let mapleader = ";"
 
+" Plugins --->
+set NERDTree
+set easymotion
+
+" My bindings --->
 nmap gr <Action>(RenameElement)
 nmap gi <Action>(ReSharperGotoImplementation)
 vmap gm <Action>(ExtractMethod)
 nmap gt <Action>(ActivateTerminalToolWindow)
 nmap gh <Action>(HideActiveWindow)
+nmap gw <Action>(SelectInProjectView)
 
 nmap sf <Action>(ActivateProjectToolWindow)
 nmap sv <Action>(SplitVertically)
@@ -22,14 +31,12 @@ nmap <leader>c <Action>(ReformatCode)
 nmap <leader>t <Action>(RiderUnitTestRunSolutionAction)
 nmap <leader>r <Action>(mainRunToolbarRunProcess) 
 nmap <leader>d <Action>(mainRunToolbarDebugProcess)
-nmap <leader>s <Action>(RunToolbarStopAction)
 nmap <leader>f <Action>(SearchEverywhere)
+nmap <leader>b <Action>(BuildSolutionAction)
 
 nmap <leader>e <Action>(NextTab)
 nmap <leader>q <Action>(PreviousTab)
-
-" Plugins --->
-set NERDTree
+nmap <leader>s <Plug>(easymotion-bd-w)
 
 " Find more examples here: https://jb.gg/share-ideavimrc
 
