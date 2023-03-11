@@ -1,9 +1,3 @@
-"" Source your .vimrc
-"source ~/.vimrc
-
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 
 " Do incremental searching.
@@ -12,26 +6,30 @@ set incsearch
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
-" My custom bindings
+" My bindings --->
+let mapleader = ";"
+
 nmap gr <Action>(RenameElement)
 nmap gi <Action>(ReSharperGotoImplementation)
 vmap gm <Action>(ExtractMethod)
-nmap sf <Action>(ActivateProjectToolWindow)
-nmap sv <Action>(SplitVertically)
-nmap sl <Action>(NextTab)
-nmap sh <Action>(PreviousTab)
 nmap gt <Action>(ActivateTerminalToolWindow)
 nmap gh <Action>(HideActiveWindow)
 
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abvasht
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
+nmap sf <Action>(ActivateProjectToolWindow)
+nmap sv <Action>(SplitVertically)
 
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
+nmap <leader>c <Action>(ReformatCode)
+nmap <leader>t <Action>(RiderUnitTestRunSolutionAction)
+nmap <leader>r <Action>(mainRunToolbarRunProcess) 
+nmap <leader>d <Action>(mainRunToolbarDebugProcess)
+nmap <leader>s <Action>(RunToolbarStopAction)
+nmap <leader>f <Action>(SearchEverywhere)
 
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+nmap <leader>e <Action>(NextTab)
+nmap <leader>q <Action>(PreviousTab)
 
+" Plugins --->
+set NERDTree
 
 " Find more examples here: https://jb.gg/share-ideavimrc
+
